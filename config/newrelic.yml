@@ -1,0 +1,9 @@
+common: &default_settings
+  license_key: <%= ENV['NEW_RELIC_LICENSE_KEY'] %>
+  app_name: efficio
+production:
+  <<: *default_settings
+  log_level: <%= ENV.fetch("NEW_RELIC_LOG_LEVEL", "info") %>
+development:
+  <<: *default_settings
+  log_level: debug
