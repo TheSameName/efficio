@@ -3,8 +3,7 @@ module.exports = {
     './public/*.html',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/views/**/*.{erb,haml,html,slim}',
-    './app/assets/stylesheets/**/*.css',
+    './app/views/**/*.{erb,haml,html,slim}'
   ],
   theme: {
     fontSize: {
@@ -26,10 +25,16 @@ module.exports = {
       borderRadius: {
         '4xl': '2rem',
       },
-      // fontFamily: {
-      //   sans: 'var(--font-inter)',
-      //   display: 'var(--font-lexend)',
-      // },
+      fontFamily: {
+        sans: [
+          'Inter var',
+          'Inter'
+        ],
+        display: [
+          'Lexend Deca',
+          'Lexend'
+        ],
+      },
       maxWidth: {
         '2xl': '40rem',
       },
