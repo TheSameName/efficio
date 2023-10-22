@@ -38,3 +38,8 @@ development:
   <<: *default_settings
   app_name: 'efficio (Development)'
   log_level: debug
+
+test:
+  <<: *default_settings
+  app_name: 'efficio (Test)'
+  log_level: debug
