@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full">
   <head>
     <title>Efficio</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,8 +14,10 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <main>
+  <body class="m-0 h-full">
+    <p style="color: green"><%= notice %></p>
+    <p style="color: red"><%= alert %></p>
+    <main class="h-full">
       <%= yield %>
     </main>
   </body>
