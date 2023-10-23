@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
       create_session_cookie(user.sessions.create!)
 
-      redirect_to root_path, notice: "Signed in successfully"
+      redirect_to home_path, notice: "Signed in successfully"
     else
       redirect_to sign_in_path(email_hint: params[:email]), alert: "That email or password is incorrect"
     end
