@@ -38,7 +38,7 @@ gem "jbuilder"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[windows jruby]
@@ -56,8 +56,9 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows]
 
+  gem "rspec-rails", "~> 6.0"
+  gem "shoulda-matchers", "~> 5.3"
   gem "factory_bot_rails", "~> 6.2"
-  # TODO: Waiting 7.1 support
   gem "bullet", "~> 7.1"
   gem "annotate", "~> 3.2"
   gem "faker", "~> 3.2"
@@ -70,10 +71,6 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "rspec-rails", "~> 6.0"
-  gem "shoulda-matchers", "~> 5.3"
-
   gem "capybara", "~> 3.3"
-  gem "selenium-webdriver", "~> 4.10"
-  gem "webdrivers", "~> 5.3"
+  gem "selenium-webdriver", "~> 4.14"
 end

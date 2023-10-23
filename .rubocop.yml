@@ -165,3 +165,6 @@ Naming/RescuedExceptionsVariableName:
 
 Naming/MethodParameterName:
   MinNameLength: 2
+
+RSpec/NestedGroups:
+  Max: 4
