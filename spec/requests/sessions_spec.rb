@@ -42,7 +42,7 @@ RSpec.describe "Sessions" do
       # end
 
       it "redirects to root path" do
-        expect(response).to redirect_to(root_path)
+        expect(response).to redirect_to(home_path)
       end
 
       it "sets a flash notice" do
