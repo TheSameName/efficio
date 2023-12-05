@@ -7,3 +7,5 @@ import { application } from "./application"
 import MobileMenuController from "./mobile_menu_controller"
 application.register("mobile-menu", MobileMenuController)
 
+import SidebarController from "./sidebar_controller"
+application.register("sidebar", SidebarController)

@@ -15,15 +15,12 @@
   </head>
 
   <body class="h-full">
-  <div>
-    <%= render 'shared/sidebar/main' %>
+  <%= render 'shared/sidebar/main' %>
 
-    <main class="py-10 lg:pl-72">
-      <div class="px-4 sm:px-6 lg:px-8">
-        <%= yield %>
-      </div>
-    </main>
-  </div>
-
+  <main class="py-10 lg:pl-72">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <%= yield %>
+    </div>
+  </main>
   </body>
 </html>
