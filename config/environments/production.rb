@@ -34,9 +34,14 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   config.action_mailer.default_url_options = { host: ENV.fetch("BASE_URL") }
-  config.action_mailer.delivery_method = :mailtrap
-  config.action_mailer.mailtrap_settings = {
-    api_key: ENV.fetch("MAILTRAP_API_TOKEN")
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name: ENV.fetch("MAILTRAP_USERNAME"),
+    password: ENV.fetch("MAILTRAP_PASSWORD"),
+    address: ENV.fetch("MAILTRAP_ADDRESS", "sandbox.smtp.mailtrap.io"),
+    domain: ENV.fetch("MAILTRAP_HOST", "sandbox.smtp.mailtrap.io"),
+    port: ENV.fetch("MAILTRAP_PORT", "2025"),
+    :authentication => :cram_md5
   }
 
   # Mount Action Cable outside main process or domain.
