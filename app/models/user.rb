@@ -35,7 +35,7 @@ class User < ApplicationRecord
   validates :password, allow_nil: true, length: { minimum: 8 }
 
   validates :folder_link, presence: true
-  validates :folder_link, with: -> { %r{\A(https?://)?([\da-z\.-]+)\.([a-z\.]{2,6})([/\w\.-]*)*/?\Z}i }
+  # validates :folder_link, with: -> { %r{\A(https?://)?([\da-z\.-]+)\.([a-z\.]{2,6})([/\w\.-]*)*/?\Z}i }
 
   normalizes :email, with: -> { _1.strip.downcase }
 
