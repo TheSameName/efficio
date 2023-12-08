@@ -1,4 +1,4 @@
-class InvitationsController < ApplicationController
+class InvitationsController < AdminController
   # TODO: Add authorization layer
 
   def new
