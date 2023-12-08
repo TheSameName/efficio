@@ -29,6 +29,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_22_134748) do
     t.boolean "verified", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false, null: false
+    t.string "folder_link", default: "", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
