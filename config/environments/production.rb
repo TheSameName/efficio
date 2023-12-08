@@ -40,7 +40,7 @@ Rails.application.configure do
     password: ENV.fetch("MAILTRAP_PASSWORD"),
     address: ENV.fetch("MAILTRAP_ADDRESS", "sandbox.smtp.mailtrap.io"),
     domain: ENV.fetch("MAILTRAP_HOST", "sandbox.smtp.mailtrap.io"),
-    port: ENV.fetch("MAILTRAP_PORT", "2025"),
+    port: ENV.fetch("MAILTRAP_PORT", "2525"),
     :authentication => :cram_md5
   }
 
