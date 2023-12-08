@@ -21,13 +21,12 @@ services:
     networks:
       - efficio
 
-  # redis:
-  #   image: redis:7-alpine
-  #   container_name: redis
-  #   ports:
-  #     - "6379:6379"
-  #   networks:
-  #     - efficio
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - efficio
 
   mailcatcher:
     image: yappabe/mailcatcher
