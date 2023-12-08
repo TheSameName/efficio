@@ -21,6 +21,11 @@
   </div>
 
   <div>
+    <%= form.label :folder_link, style: "display: block" %>
+    <%= form.text_field :folder_link, required: true, autofocus: true %>
+  </div>
+
+  <div>
     <%= form.submit "Send an invitation" %>
   </div>
 <% end %>
