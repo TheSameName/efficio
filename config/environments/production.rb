@@ -33,6 +33,11 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
+  config.action_mailer.delivery_method = :mailtrap
+  config.action_mailer.mailtrap_settings = {
+    api_key: ENV.fetch("MAILTRAP_API_TOKEN")
+  }
+
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = "wss://example.com/cable"
