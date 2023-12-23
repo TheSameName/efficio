@@ -21,5 +21,7 @@ FactoryBot.define do
     password { Faker::Internet.password(min_length: 12) }
     verified { true }
     admin { false }
+
+    folder_link { Faker::Internet.url }
   end
 end
