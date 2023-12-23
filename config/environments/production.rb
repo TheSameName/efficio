@@ -33,6 +33,17 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
+  config.action_mailer.default_url_options = { host: ENV.fetch("BASE_URL") }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name: ENV.fetch("MAILTRAP_USERNAME"),
+    password: ENV.fetch("MAILTRAP_PASSWORD"),
+    address: ENV.fetch("MAILTRAP_ADDRESS", "sandbox.smtp.mailtrap.io"),
+    domain: ENV.fetch("MAILTRAP_HOST", "sandbox.smtp.mailtrap.io"),
+    port: ENV.fetch("MAILTRAP_PORT", "2525"),
+    :authentication => :cram_md5
+  }
+
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = "wss://example.com/cable"
@@ -62,7 +73,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
-  # config.active_job.queue_adapter     = :resque
+  config.active_job.queue_adapter = :solid_queue
   # config.active_job.queue_name_prefix = "efficio_production"
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

@@ -3,7 +3,9 @@
 # Table name: users
 #
 #  id              :bigint           not null, primary key
+#  admin           :boolean          default(FALSE), not null
 #  email           :string           not null
+#  folder_link     :string           default(""), not null
 #  password_digest :string           not null
 #  verified        :boolean          default(FALSE), not null
 #  created_at      :datetime         not null
@@ -30,7 +32,11 @@ class User < ApplicationRecord
   has_many :sessions, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :password, allow_nil: true, length: { minimum: 12 }
+  validates :password, allow_nil: true, length: { minimum: 8 }
+
+  validates :folder_link, presence: true
+  # validates :folder_link, with: -> { %r{\A(https?://)?([\da-z\.-]+)\.([a-z\.]{2,6})([/\w\.-]*)*/?\Z}i }
 
   normalizes :email, with: -> { _1.strip.downcase }
+
 end

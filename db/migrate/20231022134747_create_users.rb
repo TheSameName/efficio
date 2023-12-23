@@ -7,6 +7,9 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.boolean :verified, null: false, default: false
 
       t.timestamps
+
+      t.boolean :admin, null: false, default: false
+      t.string :folder_link, null: false, default: ""
     end
   end
 end

@@ -13,9 +13,12 @@
   <%= link_to "Change email address", edit_identity_email_path %>
 </div>
 
-<div>
+<% if current_user.admin? %>
+  <div>
   <%= link_to "Send invitation", new_invitation_path %>
 </div>
+<% end %>
+
 <br>
 <h2>Access history</h2>
 <hr>

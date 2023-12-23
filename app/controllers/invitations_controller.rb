@@ -1,4 +1,4 @@
-class InvitationsController < ApplicationController
+class InvitationsController < AdminController
   # TODO: Add authorization layer
 
   def new
@@ -19,7 +19,7 @@ class InvitationsController < ApplicationController
   private
 
   def user_params
-    params.permit(:email).merge(password: SecureRandom.base58, verified: true)
+    params.permit(:email, :folder_link).merge(password: SecureRandom.base58, verified: true)
   end
 
   def send_invitation_instructions

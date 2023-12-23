@@ -3,6 +3,8 @@ module Authentication
 
   included do
     before_action :authenticate!
+
+    helper_method :current_user
   end
 
   def current_user
