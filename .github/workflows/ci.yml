@@ -85,6 +85,14 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: .node-version
+
+      - name: Install Yarn packages
+        run: yarn install --pure-lockfile
+
       - name: Build Assets
         run: |
           yarn build
